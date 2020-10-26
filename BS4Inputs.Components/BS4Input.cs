@@ -1,4 +1,4 @@
-﻿namespace BS4Inputs
+﻿namespace BS4Inputs.Components
 {
     public static class BS4Input
     {
