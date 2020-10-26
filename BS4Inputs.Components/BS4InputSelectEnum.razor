@@ -1,0 +1,16 @@
+﻿@typeparam TValue
+@inherits InputSelect<TValue>
+
+<select @attributes="AdditionalAttributes"
+        class="@BS4Input.FixClassNames(CssClass)"
+        @onchange="EventCallback.Factory.CreateBinder<string>(
+        this, __value => CurrentValueAsString = __value, CurrentValueAsString)">
+    <option selected disabled>Please select an item...</option>
+    @if (typeof(TValue).IsEnum)
+    {
+        foreach (var item in Enum.GetValues(typeof(TValue)))
+        {
+            <option value="@item">@item</option>
+        }
+    }
+</select>
