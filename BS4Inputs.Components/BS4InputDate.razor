@@ -1,8 +1,0 @@
-﻿@inherits InputDate<DateTime>
-
-<input @attributes="AdditionalAttributes"
-       type="date"
-       class="@BS4Input.FixClassNames(CssClass)"
-       value="@BindConverter.FormatValue(CurrentValueAsString)"
-       @oninput="EventCallback.Factory.CreateBinder<string>(
-        this, __value => CurrentValueAsString = __value, CurrentValueAsString)" />
